@@ -91,6 +91,7 @@ return {
         s("usepackage", fmt([[\usepackage{{{}}}]], {
           i(1, "package"),
         })),
+        s("documentclass", { t("\\documentclass{}") }),
       }
 
       local beamer_snippets = {
