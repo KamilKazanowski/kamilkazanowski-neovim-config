@@ -46,8 +46,8 @@ function M.setup()
       "",
       "Telescope",
       "",
-      "  ff                 Open FuzzyFind",
-      "  fg                 Open Grep",
+      "  <leader>ff         Open FuzzyFind",
+      "  <leader>fg         Open Grep",
       "",
       "Vim slime",
       "",
@@ -58,10 +58,10 @@ function M.setup()
       "  /init              Init opencode project",
       "  /undo              Undo changes made by AI",
       "",
-      "  ,a                 Ask opencode",
-      "  ,q                 Execute opencode action",
-      "  ,t                 Toggle opencode window",
-      "  ,<Tab>             Toggle opencode mode",
+      "  <locleader>a       Ask opencode",
+      "  <locleader>q       Execute opencode action",
+      "  <locleader>t       Toggle opencode window",
+      "  <locleader><Tab>   Toggle opencode mode",
       "",
       "Spell check",
       "",
@@ -140,8 +140,8 @@ function M.setup()
     vim.api.nvim_buf_add_highlight(buf, ns, "Special", 14, 0, -1)
 
     -- Skróty klawiszowe
-    vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", 16, 0, 10)
-    vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", 17, 0, 10)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", 16, 0, 20)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", 17, 0, 20)
 
     -- Tytuł sekcji Vim slime
     vim.api.nvim_buf_add_highlight(buf, ns, "Special", 19, 0, -1)
@@ -154,7 +154,7 @@ function M.setup()
 
     -- Skróty klawiszowe
     for line = 25, 31 do
-      vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 0, 9)
+      vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 0, 20)
     end
 
     -- Tytuł sekcji Spell check
