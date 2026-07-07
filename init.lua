@@ -16,3 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("vim_setup")
 require("lsp_config")
 require("lazy").setup("plugins")
+
+ -- załadowanie abominacji
+require("helpwindow").setup()

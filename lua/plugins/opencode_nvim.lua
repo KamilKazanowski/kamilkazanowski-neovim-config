@@ -26,8 +26,7 @@ return {
   },
   config = function()
     ---@type opencode.Opts
-    vim.g.opencode_opts = {
-    }
+    vim.g.opencode_opts = {}
 
     vim.o.autoread = true
 
@@ -69,20 +68,6 @@ return {
         end
       end,
       { desc = "Toggle opencode mode" }
-    )
-
-    vim.keymap.set({ "n", "x" }, "go",
-      function()
-        return require("opencode").operator("@this ")
-      end,
-      { desc = "Add range to opencode", expr = true }
-    )
-
-    vim.keymap.set("n", "goo",
-      function()
-        return require("opencode").operator("@this ") .. "_"
-      end,
-      { desc = "Add line to opencode", expr = true}
     )
   end,
 }
