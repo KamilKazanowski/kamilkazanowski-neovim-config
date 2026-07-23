@@ -5,7 +5,7 @@ return {
     vim.g.vimtex_view_method = "zathura"
     vim.g.vimtex_compiler_method = 'latexmk'
 
-     -- pisząc w latexu zawsze ignoruj ostrzeżenia (błędy też jeśli plik się kompiluje)
+     -- kiedy piszesz w latexu zawsze ignoruj ostrzeżenia (błędy też jeśli plik się kompiluje)
     vim.g.vimtex_quickfix_open_on_warning = 0
 
      -- ustawienie tworzenia katalogu build na pliki tymczasowe

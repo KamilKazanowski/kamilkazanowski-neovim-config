@@ -43,3 +43,5 @@ vim.keymap.set({ "n", "x" }, "x", '"_x')
  -- ustawienie by zamiana tekstu przez wklejenie nie nadpisywała rejestru
 vim.keymap.set("x", "p", '"_dP')
 
+ -- wyrzucenie skrótów które mnie denerwują
+vim.keymap.set("n", "J", "")

@@ -55,6 +55,8 @@ function M.setup()
       "",
       "Opencode",
       "",
+      "  opencode --port    Run opencode instance that neovim can interact with",
+      "",
       "  /init              Init opencode project",
       "  /undo              Undo changes made by AI",
       "",
@@ -152,50 +154,52 @@ function M.setup()
     -- Tytuł sekcji Opencode
     vim.api.nvim_buf_add_highlight(buf, ns, "Special", 23, 0, -1)
 
+    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 25, 0, 20)
+
     -- Skróty klawiszowe
-    for line = 25, 31 do
+    for line = 27, 33 do
       vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 0, 20)
     end
 
     -- Tytuł sekcji Spell check
-    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 33, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 35, 0, -1)
 
     -- Komendy
-    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 35, 0, 15)
-    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 36, 0, 19)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 37, 0, 15)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 38, 0, 19)
 
     -- Skróty klawiszowe
-    for line = 38, 44 do
+    for line = 40, 46 do
       vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 2, 20)
     end
 
     -- Tytuł sekcji Vimtex
-    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 46, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 48, 0, -1)
 
     -- Komenda :cc
-    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 48, 2, 15)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Type", 50, 2, 15)
 
     -- Tytuł podsekcji text words 1
-    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 50, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 52, 0, -1)
 
     -- Skróty klawiszowe
-    for line = 52, 55 do
+    for line = 54, 57 do
       vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 2, 20)
     end
 
     -- Tytuł podsekcji text words 2
-    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 57, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 59, 0, -1)
 
     -- Skróty klawiszowe
-    for line = 59, 64 do
+    for line = 61, 66 do
       vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 2, 20)
     end
 
     -- Tytuł podsekcji Movement keybinds
-    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 66, 0, -1)
+    vim.api.nvim_buf_add_highlight(buf, ns, "Special", 68, 0, -1)
 
     -- Skróty klawiszowe
-    for line = 68, 71 do
+    for line = 70, 73 do
       vim.api.nvim_buf_add_highlight(buf, ns, "Keyword", line, 2, 20)
     end
 
