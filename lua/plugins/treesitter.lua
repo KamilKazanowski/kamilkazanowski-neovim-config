@@ -1,23 +1,55 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  branch = 'master',
+  branch = "main",
   lazy = false,
   build = ":TSUpdate",
+
   config = function()
-    local config = require("nvim-treesitter.configs")
-     -- instalacja i konfiguracja parserów do języków, w których piszę
-    config.setup({
-      ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "cpp", "python", "latex", "json", "julia", "html", "css" },
-       -- wyłączenie kolorowania tekstu dla konkretnych języków
-      highlight = {
-        enable = true,
-        disable = { "latex" }
-      },
-       -- wyłączenie wcięć tekstu dla konkretnych języków
-      indent = {
-        enable = true,
-        disable = { "latex", "julia" }
-      },
+    require("nvim-treesitter").setup()
+
+    -- Instalacja parserów używanych języków
+    require("nvim-treesitter").install({
+      "c",
+      "lua",
+      "vim",
+      "vimdoc",
+      "query",
+      "cpp",
+      "python",
+      "json",
+      "julia",
+      "html",
+      "css",
     })
-  end
+
+    -- Włączenie kolorowania składni
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = {
+        "c",
+        "lua",
+        "vim",
+        "vimdoc",
+        "query",
+        "cpp",
+        "python",
+        "json",
+        "julia",
+        "html",
+        "css",
+      },
+      callback = function(ev)
+        vim.treesitter.start(ev.buf)
+      end,
+    })
+
+    -- Wyłączenie kolorowania dla LaTeX
+    -- oraz wyłączenie wcięć Tree-sitter dla Julii
+    -- (LaTeX nie jest tutaj w ogóle uruchamiany przez Tree-sitter)
+    vim.api.nvim_create_autocmd("FileType", {
+      pattern = { "julia" },
+      callback = function()
+        vim.bo.indentexpr = ""
+      end,
+    })
+  end,
 }

@@ -16,7 +16,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
  -- włączenie i konfiguracja LSP
-vim.lsp.enable({"lua_ls"})
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -27,4 +26,27 @@ vim.lsp.config("lua_ls", {
   }
 })
 
-vim.lsp.enable({"julials"})
+vim.lsp.config("basedpyright", {
+  cmd = { "basedpyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  root_markers = {
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+    "requirements.txt",
+    ".git",
+   },
+   settings = {
+     basedpyright = {
+       analysis = {
+         diagnosticMode = "openFilesOnly",
+         typeCheckingMode = "basic",
+         diagnosticSeverityOverrides = {
+           reportAny = "none",
+         },
+       },
+     },
+   },
+})
+
+vim.lsp.enable({"lua_ls", "julials", "basedpyright"})
